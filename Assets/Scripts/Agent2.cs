@@ -228,7 +228,11 @@ public class Agent2 : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        // Reset counter variables at the start of each update loop iteration.
         neighbourCount = 0;
+        totalPosition = Vector3.zero;
+        totalVelocity = Vector3.zero;
+        totalAvoidance = Vector3.zero;
 
         CheckNeighbours();
 
