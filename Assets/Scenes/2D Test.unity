@@ -153,15 +153,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 0
   visualRange: 20
   minDistance: 3
   cohesionFactor: 0.005
   alignmentFactor: 0.05
   separationFactor: 0.3
-  screenRetentionFactor: 0.35
+  screenRetentionFactor: 0.1
   margin: 50
-  maxSpeed: 0.3
+  maxSpeed: 0.2
   maxAngle: 90
 --- !u!212 &9879217
 SpriteRenderer:
@@ -259,15 +258,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 0
   visualRange: 20
   minDistance: 3
   cohesionFactor: 0.005
   alignmentFactor: 0.05
   separationFactor: 0.3
-  screenRetentionFactor: 0.35
+  screenRetentionFactor: 0.1
   margin: 50
-  maxSpeed: 0.3
+  maxSpeed: 0.2
   maxAngle: 90
 --- !u!212 &18514023
 SpriteRenderer:
@@ -365,15 +363,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 0
   visualRange: 20
   minDistance: 3
   cohesionFactor: 0.005
   alignmentFactor: 0.05
   separationFactor: 0.3
-  screenRetentionFactor: 0.35
+  screenRetentionFactor: 0.1
   margin: 50
-  maxSpeed: 0.3
+  maxSpeed: 0.2
   maxAngle: 90
 --- !u!212 &263511305
 SpriteRenderer:
@@ -471,15 +468,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 0
   visualRange: 20
   minDistance: 3
   cohesionFactor: 0.005
   alignmentFactor: 0.05
   separationFactor: 0.3
-  screenRetentionFactor: 0.35
+  screenRetentionFactor: 0.1
   margin: 50
-  maxSpeed: 0.3
+  maxSpeed: 0.2
   maxAngle: 90
 --- !u!212 &271457437
 SpriteRenderer:
@@ -577,15 +573,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 0
   visualRange: 20
   minDistance: 3
   cohesionFactor: 0.005
   alignmentFactor: 0.05
   separationFactor: 0.3
-  screenRetentionFactor: 0.35
+  screenRetentionFactor: 0.1
   margin: 50
-  maxSpeed: 0.3
+  maxSpeed: 0.2
   maxAngle: 90
 --- !u!212 &496231495
 SpriteRenderer:
@@ -766,15 +761,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 0
   visualRange: 20
   minDistance: 3
   cohesionFactor: 0.005
   alignmentFactor: 0.05
   separationFactor: 0.3
-  screenRetentionFactor: 0.35
+  screenRetentionFactor: 0.1
   margin: 50
-  maxSpeed: 0.3
+  maxSpeed: 0.2
   maxAngle: 90
 --- !u!212 &564705430
 SpriteRenderer:
@@ -938,15 +932,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 0
   visualRange: 20
   minDistance: 3
   cohesionFactor: 0.005
   alignmentFactor: 0.05
   separationFactor: 0.3
-  screenRetentionFactor: 0.35
+  screenRetentionFactor: 0.1
   margin: 50
-  maxSpeed: 0.3
+  maxSpeed: 0.2
   maxAngle: 90
 --- !u!1 &829167874
 GameObject:
@@ -978,15 +971,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 0
   visualRange: 20
   minDistance: 3
   cohesionFactor: 0.005
   alignmentFactor: 0.05
   separationFactor: 0.3
-  screenRetentionFactor: 0.35
+  screenRetentionFactor: 0.1
   margin: 50
-  maxSpeed: 0.3
+  maxSpeed: 0.2
   maxAngle: 90
 --- !u!212 &829167876
 SpriteRenderer:
@@ -1181,15 +1173,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 0
   visualRange: 20
   minDistance: 3
   cohesionFactor: 0.005
   alignmentFactor: 0.05
   separationFactor: 0.3
-  screenRetentionFactor: 0.35
+  screenRetentionFactor: 0.1
   margin: 50
-  maxSpeed: 0.3
+  maxSpeed: 0.2
   maxAngle: 90
 --- !u!212 &928833169
 SpriteRenderer:
@@ -1287,15 +1278,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 0
   visualRange: 20
   minDistance: 3
   cohesionFactor: 0.005
   alignmentFactor: 0.05
   separationFactor: 0.3
-  screenRetentionFactor: 0.35
+  screenRetentionFactor: 0.1
   margin: 50
-  maxSpeed: 0.3
+  maxSpeed: 0.2
   maxAngle: 90
 --- !u!212 &950157406
 SpriteRenderer:
@@ -1393,15 +1383,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 0
   visualRange: 20
   minDistance: 3
   cohesionFactor: 0.005
   alignmentFactor: 0.05
   separationFactor: 0.3
-  screenRetentionFactor: 0.35
+  screenRetentionFactor: 0.1
   margin: 50
-  maxSpeed: 0.3
+  maxSpeed: 0.2
   maxAngle: 90
 --- !u!212 &958619697
 SpriteRenderer:
@@ -1499,15 +1488,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 0
   visualRange: 20
   minDistance: 3
   cohesionFactor: 0.005
   alignmentFactor: 0.05
   separationFactor: 0.3
-  screenRetentionFactor: 0.35
+  screenRetentionFactor: 0.1
   margin: 50
-  maxSpeed: 0.3
+  maxSpeed: 0.2
   maxAngle: 90
 --- !u!212 &1020637095
 SpriteRenderer:
@@ -1605,15 +1593,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 0
   visualRange: 20
   minDistance: 3
   cohesionFactor: 0.005
   alignmentFactor: 0.05
   separationFactor: 0.3
-  screenRetentionFactor: 0.35
+  screenRetentionFactor: 0.1
   margin: 50
-  maxSpeed: 0.3
+  maxSpeed: 0.2
   maxAngle: 90
 --- !u!212 &1057506185
 SpriteRenderer:
@@ -1711,15 +1698,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 0
   visualRange: 20
   minDistance: 3
   cohesionFactor: 0.005
   alignmentFactor: 0.05
   separationFactor: 0.3
-  screenRetentionFactor: 0.35
+  screenRetentionFactor: 0.1
   margin: 50
-  maxSpeed: 0.3
+  maxSpeed: 0.2
   maxAngle: 90
 --- !u!212 &1137071620
 SpriteRenderer:
@@ -1817,15 +1803,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 0
   visualRange: 20
   minDistance: 3
   cohesionFactor: 0.005
   alignmentFactor: 0.05
   separationFactor: 0.3
-  screenRetentionFactor: 0.35
+  screenRetentionFactor: 0.1
   margin: 50
-  maxSpeed: 0.3
+  maxSpeed: 0.2
   maxAngle: 90
 --- !u!212 &1165225587
 SpriteRenderer:
@@ -1923,15 +1908,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 0
   visualRange: 20
   minDistance: 3
   cohesionFactor: 0.005
   alignmentFactor: 0.05
   separationFactor: 0.3
-  screenRetentionFactor: 0.35
+  screenRetentionFactor: 0.1
   margin: 50
-  maxSpeed: 0.3
+  maxSpeed: 0.2
   maxAngle: 90
 --- !u!212 &1169293605
 SpriteRenderer:
@@ -2072,15 +2056,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 0
   visualRange: 20
   minDistance: 3
   cohesionFactor: 0.005
   alignmentFactor: 0.05
   separationFactor: 0.3
-  screenRetentionFactor: 0.35
+  screenRetentionFactor: 0.1
   margin: 50
-  maxSpeed: 0.3
+  maxSpeed: 0.2
   maxAngle: 90
 --- !u!212 &1364603467
 SpriteRenderer:
@@ -2178,15 +2161,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 0
   visualRange: 20
   minDistance: 3
   cohesionFactor: 0.005
   alignmentFactor: 0.05
   separationFactor: 0.3
-  screenRetentionFactor: 0.35
+  screenRetentionFactor: 0.1
   margin: 50
-  maxSpeed: 0.3
+  maxSpeed: 0.2
   maxAngle: 90
 --- !u!212 &1369055730
 SpriteRenderer:
@@ -2284,15 +2266,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 0
   visualRange: 20
   minDistance: 3
   cohesionFactor: 0.005
   alignmentFactor: 0.05
   separationFactor: 0.3
-  screenRetentionFactor: 0.35
+  screenRetentionFactor: 0.1
   margin: 50
-  maxSpeed: 0.3
+  maxSpeed: 0.2
   maxAngle: 90
 --- !u!212 &1435371046
 SpriteRenderer:
@@ -2390,15 +2371,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 0
   visualRange: 20
   minDistance: 3
   cohesionFactor: 0.005
   alignmentFactor: 0.05
   separationFactor: 0.3
-  screenRetentionFactor: 0.35
+  screenRetentionFactor: 0.1
   margin: 50
-  maxSpeed: 0.3
+  maxSpeed: 0.2
   maxAngle: 90
 --- !u!212 &1629459333
 SpriteRenderer:
@@ -2496,15 +2476,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 0
   visualRange: 20
   minDistance: 3
   cohesionFactor: 0.005
   alignmentFactor: 0.05
   separationFactor: 0.3
-  screenRetentionFactor: 0.35
+  screenRetentionFactor: 0.1
   margin: 50
-  maxSpeed: 0.3
+  maxSpeed: 0.2
   maxAngle: 90
 --- !u!212 &1642755661
 SpriteRenderer:
@@ -2602,15 +2581,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 0
   visualRange: 20
   minDistance: 3
   cohesionFactor: 0.005
   alignmentFactor: 0.05
   separationFactor: 0.3
-  screenRetentionFactor: 0.35
+  screenRetentionFactor: 0.1
   margin: 50
-  maxSpeed: 0.3
+  maxSpeed: 0.2
   maxAngle: 90
 --- !u!212 &1710347267
 SpriteRenderer:
@@ -2708,15 +2686,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 0
   visualRange: 20
   minDistance: 3
   cohesionFactor: 0.005
   alignmentFactor: 0.05
   separationFactor: 0.3
-  screenRetentionFactor: 0.35
+  screenRetentionFactor: 0.1
   margin: 50
-  maxSpeed: 0.3
+  maxSpeed: 0.2
   maxAngle: 90
 --- !u!212 &1717052011
 SpriteRenderer:
@@ -2814,15 +2791,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 0
   visualRange: 20
   minDistance: 3
   cohesionFactor: 0.005
   alignmentFactor: 0.05
   separationFactor: 0.3
-  screenRetentionFactor: 0.35
+  screenRetentionFactor: 0.1
   margin: 50
-  maxSpeed: 0.3
+  maxSpeed: 0.2
   maxAngle: 90
 --- !u!212 &1812590731
 SpriteRenderer:
@@ -2920,15 +2896,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 0
   visualRange: 20
   minDistance: 3
   cohesionFactor: 0.005
   alignmentFactor: 0.05
   separationFactor: 0.3
-  screenRetentionFactor: 0.35
+  screenRetentionFactor: 0.1
   margin: 50
-  maxSpeed: 0.3
+  maxSpeed: 0.2
   maxAngle: 90
 --- !u!212 &1856637987
 SpriteRenderer:
@@ -3026,15 +3001,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 0
   visualRange: 20
   minDistance: 3
   cohesionFactor: 0.005
   alignmentFactor: 0.05
   separationFactor: 0.3
-  screenRetentionFactor: 0.35
+  screenRetentionFactor: 0.1
   margin: 50
-  maxSpeed: 0.3
+  maxSpeed: 0.2
   maxAngle: 90
 --- !u!212 &1934118383
 SpriteRenderer:
@@ -3132,15 +3106,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 0
   visualRange: 20
   minDistance: 3
   cohesionFactor: 0.005
   alignmentFactor: 0.05
   separationFactor: 0.3
-  screenRetentionFactor: 0.35
+  screenRetentionFactor: 0.1
   margin: 50
-  maxSpeed: 0.3
+  maxSpeed: 0.2
   maxAngle: 90
 --- !u!212 &1939669529
 SpriteRenderer:
@@ -3238,15 +3211,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 0
   visualRange: 20
   minDistance: 3
   cohesionFactor: 0.005
   alignmentFactor: 0.05
   separationFactor: 0.3
-  screenRetentionFactor: 0.35
+  screenRetentionFactor: 0.1
   margin: 50
-  maxSpeed: 0.3
+  maxSpeed: 0.2
   maxAngle: 90
 --- !u!212 &2006627436
 SpriteRenderer:
@@ -3344,15 +3316,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 0
   visualRange: 20
   minDistance: 3
   cohesionFactor: 0.005
   alignmentFactor: 0.05
   separationFactor: 0.3
-  screenRetentionFactor: 0.35
+  screenRetentionFactor: 0.1
   margin: 50
-  maxSpeed: 0.3
+  maxSpeed: 0.2
   maxAngle: 90
 --- !u!212 &2018242123
 SpriteRenderer:
@@ -3450,15 +3421,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  log: 0
   visualRange: 20
   minDistance: 3
   cohesionFactor: 0.005
   alignmentFactor: 0.05
   separationFactor: 0.3
-  screenRetentionFactor: 0.35
+  screenRetentionFactor: 0.1
   margin: 50
-  maxSpeed: 0.3
+  maxSpeed: 0.2
   maxAngle: 90
 --- !u!212 &2091565942
 SpriteRenderer:
