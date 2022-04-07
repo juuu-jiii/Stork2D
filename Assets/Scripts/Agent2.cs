@@ -10,7 +10,7 @@ using UnityEngine;
 /// </summary>
 public class Agent2 : MonoBehaviour
 {
-    //public bool log;
+    public bool log;
 
     // Property separate from the field because Vector3's are structs. This one
     // in particular needs to be modified within the class, and so a returned
@@ -285,10 +285,19 @@ public class Agent2 : MonoBehaviour
         RaycastHit2D hit;
         //Physics.Raycast(transform.position, transform.forward, out hit, maxSeeAhead);
         hit = Physics2D.Raycast(transform.position, transform.forward, maxSeeAhead);
+        
+        if (log)
+        {
+            Debug.Log(transform.right);
+            //Debug.DrawLine(transform.position, (transform.position + velocity) * maxSeeAhead, Color.white);
 
-        Debug.DrawLine(transform.position, transform.forward * maxSeeAhead, Color.white);
+            // Can use this as inspo when drawing paths.
+            //Debug.DrawRay(transform.position, velocity, Color.white, 1.0f);
 
-        if (hit) Debug.Log("hit");
+            // HEHE IT WAS DRAWRAY AND NOT DRAWLINE DHJSGFDHJSHFDGSHJF
+            Debug.DrawRay(transform.position, transform.right * maxSeeAhead);
+            if (hit) Debug.Log("hit");
+        }
         //Debug.Log(hit);
     }
     #endregion
