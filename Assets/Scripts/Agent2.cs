@@ -74,6 +74,17 @@ public class Agent2 : MonoBehaviour
     private Vector3 sceneDimensions;
 
     /// <summary>
+    /// A vector describing this agent's line of sight. Defines how far the 
+    /// agent can "see" ahead of it.
+    /// </summary>
+    private Vector3 ahead;
+
+    /// <summary>
+    /// A vector describing this agent's line of sight. Equal to ahead, halved.
+    /// </summary>
+    private Vector3 aheadHalved;
+
+    /// <summary>
     /// Radius of this agent's field of view.
     /// </summary>
     [SerializeField] private float visualRange;
@@ -115,6 +126,14 @@ public class Agent2 : MonoBehaviour
     /// </summary>
     [SerializeField] private float maxSpeed;
 
+    /// <summary>
+    /// The maximum distance the agent can see ahead of itself, collinear to 
+    /// its velocity vector. The greater the value, the earlier the agent will
+    /// begin avoiding an incoming obstacle.
+    /// </summary>
+    [SerializeField] private float maxSeeAhead;
+
+    // Deprecated
     [SerializeField] private float maxAngle;
 
     // Start is called before the first frame update
@@ -131,7 +150,6 @@ public class Agent2 : MonoBehaviour
             Random.Range(-sceneDimensions.y / 2, sceneDimensions.y / 2),
             0);
         velocity = new Vector3(Random.Range(1, 6), Random.Range(1, 6), 0);
-
         // Idk
         //transform.rotation = Quaternion.LookRotation(Velocity.normalized);
     }
@@ -217,6 +235,7 @@ public class Agent2 : MonoBehaviour
         }
     }
 
+    #region The Three Rules
     /// <summary>
     /// Applies cohesion rule calculations.
     /// </summary>
@@ -250,7 +269,31 @@ public class Agent2 : MonoBehaviour
     {
         velocity += totalAvoidance * separationFactor;
     }
+    #endregion
 
+    #region Collision Avoidance
+    private void CheckForObstacles()
+    {
+
+    }
+
+    private void AvoidCollisions()
+    {
+        // Define the vector describing the agent's line of sight.
+        ahead = transform.position + Vector3.Normalize(velocity) * maxSeeAhead;
+
+        RaycastHit2D hit;
+        //Physics.Raycast(transform.position, transform.forward, out hit, maxSeeAhead);
+        hit = Physics2D.Raycast(transform.position, transform.forward, maxSeeAhead);
+
+        Debug.DrawLine(transform.position, transform.forward * maxSeeAhead, Color.white);
+
+        if (hit) Debug.Log("hit");
+        //Debug.Log(hit);
+    }
+    #endregion
+
+    #region Housekeeping
     /// <summary>
     /// Keeps the agent onscreen.
     /// </summary>
@@ -316,6 +359,7 @@ public class Agent2 : MonoBehaviour
         if (velocity.magnitude > maxSpeed)
             velocity = velocity.normalized * maxSpeed;
     }
+    #endregion
 
     //private Vector3 LimitRotation()
     //{
@@ -348,15 +392,23 @@ public class Agent2 : MonoBehaviour
         LimitSpeed();
         //LimitRotation();
         RetainOnScreen();
-        
+
+        AvoidCollisions();
+
         // Apply calculated changes to this agent.
         transform.position = new Vector3(
             transform.position.x + velocity.x,
             transform.position.y + velocity.y,
             transform.position.z);
 
-        // Idk??
-        transform.rotation = Quaternion.LookRotation(transform.forward);
+        // 2D-specific implementation that rotates the sprite in the direction
+        // of movement. 
+        float angle = Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, transform.forward);
+
+        //transform.Rotate(transform.forward, angle);
+        //transform.rotation = Quaternion.LookRotation(velocity);
+        //transform.rotation = Quaternion.LookRotation(transform.forward);
     }
 }
 
