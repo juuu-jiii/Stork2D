@@ -99,22 +99,22 @@ public class Agent2 : MonoBehaviour
     /// <summary>
     /// Influence of the cohesion rule.
     /// </summary>
-    [SerializeField] private float cohesionFactor;
+    [SerializeField] private float cohesionForce;
 
     /// <summary>
     /// Influence of the alignment rule.
     /// </summary>
-    [SerializeField] private float alignmentFactor;
+    [SerializeField] private float alignmentForce;
 
     /// <summary>
     /// Influence of the separation rule.
     /// </summary>
-    [SerializeField] private float separationFactor;
+    [SerializeField] private float separationForce;
 
     /// <summary>
     /// The strength of the force used to keep an agent on-screen.
     /// </summary>
-    [SerializeField] private float screenRetentionFactor;
+    [SerializeField] private float screenRetentionForce;
 
     /// <summary>
     /// Distance from the edge of the screen the agent must keep within.
@@ -245,8 +245,8 @@ public class Agent2 : MonoBehaviour
         // cohesionFactor.
         avgPosition = totalPosition / neighbourCount;
 
-        velocity.x += (avgPosition.x - transform.position.x) * cohesionFactor;
-        velocity.y += (avgPosition.y - transform.position.y) * cohesionFactor;
+        velocity.x += (avgPosition.x - transform.position.x) * cohesionForce;
+        velocity.y += (avgPosition.y - transform.position.y) * cohesionForce;
     }
 
     /// <summary>
@@ -258,8 +258,8 @@ public class Agent2 : MonoBehaviour
         // alignmentFactor.
         avgVelocity = totalVelocity / neighbourCount;
 
-        velocity.x += (avgVelocity.x - velocity.x) * alignmentFactor;
-        velocity.y += (avgVelocity.y - velocity.y) * alignmentFactor;
+        velocity.x += (avgVelocity.x - velocity.x) * alignmentForce;
+        velocity.y += (avgVelocity.y - velocity.y) * alignmentForce;
     }
 
     /// <summary>
@@ -267,7 +267,7 @@ public class Agent2 : MonoBehaviour
     /// </summary>
     private void CalculateSeparation()
     {
-        velocity += totalAvoidance * separationFactor;
+        velocity += totalAvoidance * separationForce;
     }
     #endregion
 
@@ -286,7 +286,9 @@ public class Agent2 : MonoBehaviour
         // sprite is really its right vector, since transform.forward points
         // straight into the screen.
         RaycastHit2D hit;
+        RaycastHit2D hitHalved;
         hit = Physics2D.Raycast(transform.position, transform.right, maxSeeAhead);
+        hitHalved = Physics2D.Raycast(transform.position, transform.right, maxSeeAhead / 2);
         //Physics.Raycast(transform.position, transform.forward, out hit, maxSeeAhead);
 
         if (log)
@@ -300,6 +302,7 @@ public class Agent2 : MonoBehaviour
             // HEHE IT WAS DRAWRAY AND NOT DRAWLINE DHJSGFDHJSHFDGSHJF
             Debug.DrawRay(transform.position, transform.right * maxSeeAhead);
             if (hit) Debug.Log("hit");
+            if (hitHalved) Debug.Log("hitHalved");
         }
         //Debug.Log(hit);
     }
@@ -337,26 +340,26 @@ public class Agent2 : MonoBehaviour
         // lower left corner (0, 0) and go to (Screen.width, Screen.height).
         if (spriteUpperBound < margin)
         {
-            velocity.y += screenRetentionFactor;
+            velocity.y += screenRetentionForce;
             //velocity.y *= -1;
             //velocity = -velocity;
         }
         if (spriteLowerBound > Screen.height - margin)
         {
-            velocity.y -= screenRetentionFactor;
+            velocity.y -= screenRetentionForce;
             //velocity.y *= -1;
             //velocity = -velocity;
         }
 
         if (spriteLeftBound < margin)
         {
-            velocity.x += screenRetentionFactor;
+            velocity.x += screenRetentionForce;
             //velocity.x *= -1;
             //velocity = -velocity;
         }
         if (spriteRightBound > Screen.width - margin)
         {
-            velocity.x -= screenRetentionFactor;
+            velocity.x -= screenRetentionForce;
             //velocity.x *= -1;
             //velocity = -velocity;
         }

@@ -156,10 +156,10 @@ MonoBehaviour:
   log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 25
@@ -263,10 +263,10 @@ MonoBehaviour:
   log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 25
@@ -370,10 +370,10 @@ MonoBehaviour:
   log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 25
@@ -477,10 +477,10 @@ MonoBehaviour:
   log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 25
@@ -584,10 +584,10 @@ MonoBehaviour:
   log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 25
@@ -774,10 +774,10 @@ MonoBehaviour:
   log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 25
@@ -947,10 +947,10 @@ MonoBehaviour:
   log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 25
@@ -988,10 +988,10 @@ MonoBehaviour:
   log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 25
@@ -1192,10 +1192,10 @@ MonoBehaviour:
   log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 25
@@ -1299,10 +1299,10 @@ MonoBehaviour:
   log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 25
@@ -1406,10 +1406,10 @@ MonoBehaviour:
   log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 25
@@ -1513,10 +1513,10 @@ MonoBehaviour:
   log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 25
@@ -1620,10 +1620,10 @@ MonoBehaviour:
   log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 25
@@ -1727,10 +1727,10 @@ MonoBehaviour:
   log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 25
@@ -1834,10 +1834,10 @@ MonoBehaviour:
   log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 25
@@ -1941,10 +1941,10 @@ MonoBehaviour:
   log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 25
@@ -2091,10 +2091,10 @@ MonoBehaviour:
   log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 25
@@ -2198,10 +2198,10 @@ MonoBehaviour:
   log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 25
@@ -2305,10 +2305,10 @@ MonoBehaviour:
   log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 25
@@ -2412,10 +2412,10 @@ MonoBehaviour:
   log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 25
@@ -2519,10 +2519,10 @@ MonoBehaviour:
   log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 25
@@ -2626,10 +2626,10 @@ MonoBehaviour:
   log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 25
@@ -2733,10 +2733,10 @@ MonoBehaviour:
   log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 25
@@ -2840,10 +2840,10 @@ MonoBehaviour:
   log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 25
@@ -2947,10 +2947,10 @@ MonoBehaviour:
   log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 25
@@ -3054,10 +3054,10 @@ MonoBehaviour:
   log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 25
@@ -3161,10 +3161,10 @@ MonoBehaviour:
   log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 25
@@ -3268,10 +3268,10 @@ MonoBehaviour:
   log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 25
@@ -3375,10 +3375,10 @@ MonoBehaviour:
   log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 25
@@ -3482,10 +3482,10 @@ MonoBehaviour:
   log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 25

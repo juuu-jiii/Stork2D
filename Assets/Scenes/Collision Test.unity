@@ -153,12 +153,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
@@ -259,12 +260,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
@@ -365,12 +367,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
@@ -471,12 +474,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
@@ -577,12 +581,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
@@ -766,12 +771,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
@@ -938,12 +944,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 1
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 10
@@ -978,12 +985,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
@@ -1181,12 +1189,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
@@ -1287,12 +1296,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
@@ -1393,12 +1403,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
@@ -1499,12 +1510,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
@@ -1605,12 +1617,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
@@ -1711,12 +1724,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
@@ -1817,12 +1831,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
@@ -1923,12 +1938,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
@@ -2121,7 +2137,7 @@ Transform:
   m_GameObject: {fileID: 1351018043}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 15, y: 15, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 33
@@ -2172,12 +2188,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
@@ -2278,12 +2295,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
@@ -2384,12 +2402,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
@@ -2490,12 +2509,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
@@ -2596,12 +2616,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
@@ -2702,12 +2723,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
@@ -2808,12 +2830,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
@@ -2914,12 +2937,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
@@ -3020,12 +3044,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
@@ -3126,12 +3151,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
@@ -3232,12 +3258,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
@@ -3338,12 +3365,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
@@ -3444,12 +3472,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
@@ -3550,12 +3579,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5314c51641516f4c801895a024d9a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: 0
   visualRange: 20
   minDistance: 3
-  cohesionFactor: 0.005
-  alignmentFactor: 0.05
-  separationFactor: 0.3
-  screenRetentionFactor: 0.1
+  cohesionForce: 0.005
+  alignmentForce: 0.05
+  separationForce: 0.3
+  screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
