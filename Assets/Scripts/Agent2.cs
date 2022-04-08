@@ -282,13 +282,16 @@ public class Agent2 : MonoBehaviour
         // Define the vector describing the agent's line of sight.
         ahead = transform.position + Vector3.Normalize(velocity) * maxSeeAhead;
 
+        // Because this project is in 2D, the "true" forward vector of the
+        // sprite is really its right vector, since transform.forward points
+        // straight into the screen.
         RaycastHit2D hit;
+        hit = Physics2D.Raycast(transform.position, transform.right, maxSeeAhead);
         //Physics.Raycast(transform.position, transform.forward, out hit, maxSeeAhead);
-        hit = Physics2D.Raycast(transform.position, transform.forward, maxSeeAhead);
-        
+
         if (log)
         {
-            Debug.Log(transform.right);
+            //Debug.Log(transform.right);
             //Debug.DrawLine(transform.position, (transform.position + velocity) * maxSeeAhead, Color.white);
 
             // Can use this as inspo when drawing paths.
