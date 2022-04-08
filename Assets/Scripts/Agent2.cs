@@ -7,6 +7,7 @@ using UnityEngine;
 /// - https://github.com/beneater/boids/
 /// - https://github.com/zklinger2000/unity-boids
 /// - https://www.oreilly.com/library/view/ai-for-game/0596005555/ch04.html
+/// https://gamedevelopment.tutsplus.com/tutorials/understanding-steering-behaviors-collision-avoidance--gamedev-7777
 /// </summary>
 public class Agent2 : MonoBehaviour
 {
@@ -57,6 +58,12 @@ public class Agent2 : MonoBehaviour
     /// that are too close by.
     /// </summary>
     private Vector3 totalAvoidance;
+
+    /// <summary>
+    /// Vector describing the force by which to push the agent away from 
+    /// obstacles.
+    /// </summary>
+    private Vector3 avoidance;
 
     /// <summary>
     /// The average position of this agent's nearby flockmates.
@@ -132,6 +139,12 @@ public class Agent2 : MonoBehaviour
     /// begin avoiding an incoming obstacle.
     /// </summary>
     [SerializeField] private float maxSeeAhead;
+
+    /// <summary>
+    /// Multiplicative factor of the force with which to push the agent away 
+    /// from obstacles.
+    /// </summary>
+    [SerializeField] private float maxAvoidanceForce;
 
     // Deprecated
     [SerializeField] private float maxAngle;
@@ -280,16 +293,31 @@ public class Agent2 : MonoBehaviour
     private void AvoidCollisions()
     {
         // Define the vector describing the agent's line of sight.
-        ahead = transform.position + Vector3.Normalize(velocity) * maxSeeAhead;
+        //ahead = transform.position + Vector3.Normalize(velocity) * maxSeeAhead;
+        ahead = transform.position + transform.right * maxSeeAhead;
+        aheadHalved = transform.position + transform.right * maxSeeAhead / 2;
+        avoidance = Vector3.zero;
+
+        RaycastHit2D hit;
+        RaycastHit2D hitHalved;
 
         // Because this project is in 2D, the "true" forward vector of the
         // sprite is really its right vector, since transform.forward points
         // straight into the screen.
-        RaycastHit2D hit;
-        RaycastHit2D hitHalved;
+        // The Raycast returns as soon as it lands on a collider, which means
+        // there is no need to worry about finding the "most threatening"
+        // obstacle to the agent.
         hit = Physics2D.Raycast(transform.position, transform.right, maxSeeAhead);
         hitHalved = Physics2D.Raycast(transform.position, transform.right, maxSeeAhead / 2);
         //Physics.Raycast(transform.position, transform.forward, out hit, maxSeeAhead);
+
+        // If a hit is detected, calculate the avoidance force by which to push
+        // the agent away from the obstacle.
+        if (hit || hitHalved)
+        {
+            avoidance = (ahead - hit.transform.position).normalized 
+                                * maxAvoidanceForce;
+        }
 
         if (log)
         {
@@ -301,10 +329,14 @@ public class Agent2 : MonoBehaviour
 
             // HEHE IT WAS DRAWRAY AND NOT DRAWLINE DHJSGFDHJSHFDGSHJF
             Debug.DrawRay(transform.position, transform.right * maxSeeAhead);
-            if (hit) Debug.Log("hit");
-            if (hitHalved) Debug.Log("hitHalved");
+            //if (hit)
+            //    Debug.Log(hit.transform.position.x);
+            //    Debug.Log("hit");
+            //if (hitHalved) 
+            //    Debug.Log("hitHalved");
         }
-        //Debug.Log(hit);
+
+        velocity += avoidance;
     }
     #endregion
 

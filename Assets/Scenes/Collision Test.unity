@@ -163,6 +163,7 @@ MonoBehaviour:
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
+  maxAvoidanceForce: 0
   maxAngle: 90
 --- !u!212 &9879217
 SpriteRenderer:
@@ -270,6 +271,7 @@ MonoBehaviour:
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
+  maxAvoidanceForce: 0
   maxAngle: 90
 --- !u!212 &18514023
 SpriteRenderer:
@@ -377,6 +379,7 @@ MonoBehaviour:
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
+  maxAvoidanceForce: 0
   maxAngle: 90
 --- !u!212 &263511305
 SpriteRenderer:
@@ -484,6 +487,7 @@ MonoBehaviour:
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
+  maxAvoidanceForce: 0
   maxAngle: 90
 --- !u!212 &271457437
 SpriteRenderer:
@@ -591,6 +595,7 @@ MonoBehaviour:
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
+  maxAvoidanceForce: 0
   maxAngle: 90
 --- !u!212 &496231495
 SpriteRenderer:
@@ -781,6 +786,7 @@ MonoBehaviour:
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
+  maxAvoidanceForce: 0
   maxAngle: 90
 --- !u!212 &564705430
 SpriteRenderer:
@@ -953,7 +959,8 @@ MonoBehaviour:
   screenRetentionForce: 0.1
   margin: 50
   maxSpeed: 0.2
-  maxSeeAhead: 10
+  maxSeeAhead: 2
+  maxAvoidanceForce: 0.1
   maxAngle: 90
 --- !u!1 &829167874
 GameObject:
@@ -995,6 +1002,7 @@ MonoBehaviour:
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
+  maxAvoidanceForce: 0
   maxAngle: 90
 --- !u!212 &829167876
 SpriteRenderer:
@@ -1199,6 +1207,7 @@ MonoBehaviour:
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
+  maxAvoidanceForce: 0
   maxAngle: 90
 --- !u!212 &928833169
 SpriteRenderer:
@@ -1306,6 +1315,7 @@ MonoBehaviour:
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
+  maxAvoidanceForce: 0
   maxAngle: 90
 --- !u!212 &950157406
 SpriteRenderer:
@@ -1413,6 +1423,7 @@ MonoBehaviour:
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
+  maxAvoidanceForce: 0
   maxAngle: 90
 --- !u!212 &958619697
 SpriteRenderer:
@@ -1520,6 +1531,7 @@ MonoBehaviour:
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
+  maxAvoidanceForce: 0
   maxAngle: 90
 --- !u!212 &1020637095
 SpriteRenderer:
@@ -1627,6 +1639,7 @@ MonoBehaviour:
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
+  maxAvoidanceForce: 0
   maxAngle: 90
 --- !u!212 &1057506185
 SpriteRenderer:
@@ -1734,6 +1747,7 @@ MonoBehaviour:
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
+  maxAvoidanceForce: 0
   maxAngle: 90
 --- !u!212 &1137071620
 SpriteRenderer:
@@ -1841,6 +1855,7 @@ MonoBehaviour:
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
+  maxAvoidanceForce: 0
   maxAngle: 90
 --- !u!212 &1165225587
 SpriteRenderer:
@@ -1948,6 +1963,7 @@ MonoBehaviour:
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
+  maxAvoidanceForce: 0
   maxAngle: 90
 --- !u!212 &1169293605
 SpriteRenderer:
@@ -2198,6 +2214,7 @@ MonoBehaviour:
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
+  maxAvoidanceForce: 0
   maxAngle: 90
 --- !u!212 &1364603467
 SpriteRenderer:
@@ -2305,6 +2322,7 @@ MonoBehaviour:
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
+  maxAvoidanceForce: 0
   maxAngle: 90
 --- !u!212 &1369055730
 SpriteRenderer:
@@ -2372,6 +2390,106 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1369624642
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1369624645}
+  - component: {fileID: 1369624644}
+  - component: {fileID: 1369624643}
+  m_Layer: 0
+  m_Name: Circle (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!58 &1369624643
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369624642}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!212 &1369624644
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369624642}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1369624645
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369624642}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.5, y: 0, z: 0}
+  m_LocalScale: {x: 15, y: 15, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 34
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1435371044
 GameObject:
   m_ObjectHideFlags: 0
@@ -2412,6 +2530,7 @@ MonoBehaviour:
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
+  maxAvoidanceForce: 0
   maxAngle: 90
 --- !u!212 &1435371046
 SpriteRenderer:
@@ -2519,6 +2638,7 @@ MonoBehaviour:
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
+  maxAvoidanceForce: 0
   maxAngle: 90
 --- !u!212 &1629459333
 SpriteRenderer:
@@ -2626,6 +2746,7 @@ MonoBehaviour:
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
+  maxAvoidanceForce: 0
   maxAngle: 90
 --- !u!212 &1642755661
 SpriteRenderer:
@@ -2733,6 +2854,7 @@ MonoBehaviour:
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
+  maxAvoidanceForce: 0
   maxAngle: 90
 --- !u!212 &1710347267
 SpriteRenderer:
@@ -2840,6 +2962,7 @@ MonoBehaviour:
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
+  maxAvoidanceForce: 0
   maxAngle: 90
 --- !u!212 &1717052011
 SpriteRenderer:
@@ -2947,6 +3070,7 @@ MonoBehaviour:
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
+  maxAvoidanceForce: 0
   maxAngle: 90
 --- !u!212 &1812590731
 SpriteRenderer:
@@ -3054,6 +3178,7 @@ MonoBehaviour:
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
+  maxAvoidanceForce: 0
   maxAngle: 90
 --- !u!212 &1856637987
 SpriteRenderer:
@@ -3161,6 +3286,7 @@ MonoBehaviour:
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
+  maxAvoidanceForce: 0
   maxAngle: 90
 --- !u!212 &1934118383
 SpriteRenderer:
@@ -3268,6 +3394,7 @@ MonoBehaviour:
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
+  maxAvoidanceForce: 0
   maxAngle: 90
 --- !u!212 &1939669529
 SpriteRenderer:
@@ -3375,6 +3502,7 @@ MonoBehaviour:
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
+  maxAvoidanceForce: 0
   maxAngle: 90
 --- !u!212 &2006627436
 SpriteRenderer:
@@ -3482,6 +3610,7 @@ MonoBehaviour:
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
+  maxAvoidanceForce: 0
   maxAngle: 90
 --- !u!212 &2018242123
 SpriteRenderer:
@@ -3589,6 +3718,7 @@ MonoBehaviour:
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 0
+  maxAvoidanceForce: 0
   maxAngle: 90
 --- !u!212 &2091565942
 SpriteRenderer:
