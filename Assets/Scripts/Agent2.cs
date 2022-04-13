@@ -183,8 +183,9 @@ public class Agent2 : MonoBehaviour
         {
             //inView = false;
 
-            // Ensure the current agent is not being checked against itself.
-            if (a != this)
+            // Ensure the current agent is not being checked against itself,
+            // and that it is of the same "species".
+            if (a != this && a.gameObject.CompareTag(gameObject.tag))
             {
                 // Calculate the distance vector between this agent and the
                 // current flockmate under consideration.

@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Species 0
+  - Species 1
+  - Species 2
   layers:
   - Default
   - TransparentFX
