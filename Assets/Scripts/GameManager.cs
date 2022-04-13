@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private GameObject cursorTrackerGO;
+    private CursorTracker cursorTracker;
+
     public static Agent2[] agents;
 
     // Start is called before the first frame update
     void Start()
     {
+        cursorTracker = cursorTrackerGO.GetComponent<CursorTracker>();
         agents = (Agent2[])FindObjectsOfType(typeof(Agent2));
     }
 
@@ -18,6 +22,7 @@ public class GameManager : MonoBehaviour
         // Screen wraparound code
         foreach (Agent2 agent in agents)
         {
+            agent.CursorPosWorld = cursorTracker.TrackCursor();
             //// Along x-axis
             //if (agent.transform.position.x > Screen.width) 
             //    agent.transform.position = new Vector3(

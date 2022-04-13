@@ -16,10 +16,10 @@ public class CursorTracker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TrackCursor();
+        //TrackCursor();
     }
 
-    private void TrackCursor()
+    public Vector3 TrackCursor()
     {
         // Input.mousePosition's z-value is always 0. Set it to reflect the
         // Camera's height from the ground for accurate tracking of mouse
@@ -31,6 +31,8 @@ public class CursorTracker : MonoBehaviour
         // Convert this to world coordinates.
         cursorPosWorld = Camera.main.ScreenToWorldPoint(cursorPosScreen);
 
-        Debug.Log(cursorPosWorld);
+        return cursorPosWorld;
+
+        //Debug.Log(cursorPosWorld);
     }
 }

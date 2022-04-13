@@ -26,6 +26,11 @@ public class Agent2 : MonoBehaviour
     /// Returns a copy of this agent's velocity vector.
     /// </summary>
     public Vector3 Velocity { get { return velocity; }}
+    
+    /// <summary>
+    /// Position of the cursor, in world coordinates.
+    /// </summary>
+    public Vector3 CursorPosWorld { get; set; }
 
     /// <summary>
     /// Sprite used to represent this agent onscreen.
@@ -340,6 +345,13 @@ public class Agent2 : MonoBehaviour
     }
     #endregion
 
+    #region Flock Towards Cursor
+    private void MoveToCursor()
+    {
+        velocity += (CursorPosWorld - transform.position) / 100;
+    }
+    #endregion
+
     #region Housekeeping
     /// <summary>
     /// Keeps the agent onscreen.
@@ -441,6 +453,8 @@ public class Agent2 : MonoBehaviour
         RetainOnScreen();
 
         AvoidCollisions();
+
+        if (Input.GetMouseButton(1)) MoveToCursor();
 
         // Apply calculated changes to this agent.
         transform.position = new Vector3(
