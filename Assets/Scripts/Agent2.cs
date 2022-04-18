@@ -13,6 +13,12 @@ public class Agent2 : MonoBehaviour
 {
     public bool log;
 
+    /// <summary>
+    /// Flags this agent for destruction and removal in GameManager once it 
+    /// has collided with the goal.
+    /// </summary>
+    public bool ReachedGoal { get; private set; }
+
     // Property separate from the field because Vector3's are structs. This one
     // in particular needs to be modified within the class, and so a returned
     // copy (if an auto-property were used) is not very helpful.
@@ -472,6 +478,18 @@ public class Agent2 : MonoBehaviour
         //transform.rotation = Quaternion.LookRotation(velocity);
         //transform.rotation = Quaternion.LookRotation(transform.forward);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Flag agent for destruction and removal in GameManager.
+        if (collision.gameObject.CompareTag("Goal")) ReachedGoal = true;
+    }
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Goal"))
+    //        Destroy(this);
+    //}
 }
 
 // TODO: rotate agent
