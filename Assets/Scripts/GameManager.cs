@@ -47,10 +47,21 @@ public class GameManager : MonoBehaviour
         currentTheme = Themes.Artistic;
         cursorTracker = cursorTrackerGO.GetComponent<CursorTracker>();
 
+        Init();
+    }
+
+    private void Init()
+    {
         // FindObjectsOfType() returns Object[]. Cast to Agent2[], then use
         // LINQ to convert to a List.
-        agents = ((Agent2[])FindObjectsOfType(typeof(Agent2))).ToList<Agent2>();
-        agentsMaster = ((Agent2[])FindObjectsOfType(typeof(Agent2))).ToList<Agent2>();
+        agents = ((Agent2[])FindObjectsOfType(typeof(Agent2))).ToList();
+        agentsMaster = ((Agent2[])FindObjectsOfType(typeof(Agent2))).ToList();
+
+        foreach (Agent2 agent in agents)
+        {
+            agent.enabled = true;
+            agent.Init();
+        }
     }
 
     /// <summary>
@@ -134,6 +145,11 @@ public class GameManager : MonoBehaviour
                 agents.Count,
                 agentsMaster.Count,
                 0);
+
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                Init();
+            }
         }
         else
         {

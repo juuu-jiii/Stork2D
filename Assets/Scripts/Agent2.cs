@@ -183,12 +183,22 @@ public class Agent2 : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>().sprite;
         length = GetComponent<Renderer>().bounds.size.y;
         lifespan = Random.Range(minLifespan, maxLifespan);
+        
+        sceneDimensions = Camera.main.ScreenToWorldPoint(new Vector3(
+            Screen.width, 
+            Screen.height, 
+            13));
+
+        Init();
+    }
+
+    public void Init()
+    {
         age = 0;
         Alive = true;
+        ReachedGoal = false;
 
         // Spawn agents at random locations and velocities onscreen.
-        sceneDimensions = Camera.main.ScreenToWorldPoint(
-            new Vector3(Screen.width, Screen.height, 13));
         transform.position = new Vector3(
             Random.Range(-sceneDimensions.x / 2, sceneDimensions.x / 2),
             Random.Range(-sceneDimensions.y / 2, sceneDimensions.y / 2),
