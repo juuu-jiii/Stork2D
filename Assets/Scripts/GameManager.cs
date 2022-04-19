@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
     private float maxWaitTime;
     #endregion
 
+    private bool obstaclesHidden;
     private CursorTracker cursorTracker;
     private Themes currentTheme;
     private SimulationStates currentState;
@@ -55,6 +56,7 @@ public class GameManager : MonoBehaviour
         currentState = SimulationStates.InProgress;
         currentTheme = Themes.Artistic;
         cursorTracker = cursorTrackerGO.GetComponent<CursorTracker>();
+        obstaclesHidden = false;
 
         Init();
     }
@@ -98,6 +100,7 @@ public class GameManager : MonoBehaviour
                     Color newColour = obstacle.GetComponent<SpriteRenderer>().color;
                     newColour.a = 0;
                     obstacle.GetComponent<SpriteRenderer>().color = newColour;
+                    //obstacle.GetComponent<SpriteRenderer>().color = backdrop.color;
                 }
 
                 foreach (Agent2 agent in agentsMaster)
@@ -117,11 +120,16 @@ public class GameManager : MonoBehaviour
                 currentTheme = Themes.Artistic;
                 backdrop.color = colourRealistic;
 
-                foreach (Transform obstacle in obstacles.transform)
+                // Only show obstacles if they were not hidden before.
+                if (!obstaclesHidden)
                 {
-                    Color newColour = obstacle.GetComponent<SpriteRenderer>().color;
-                    newColour.a = 1;
-                    obstacle.GetComponent<SpriteRenderer>().color = newColour;
+                    foreach (Transform obstacle in obstacles.transform)
+                    {
+                        Color newColour = obstacle.GetComponent<SpriteRenderer>().color;
+                        newColour.a = 1;
+                        obstacle.GetComponent<SpriteRenderer>().color = newColour;
+                        //obstacle.GetComponent<SpriteRenderer>().color = obstacleColour;
+                    }
                 }
 
                 foreach (Agent2 agent in agentsMaster)
@@ -153,7 +161,37 @@ public class GameManager : MonoBehaviour
                 else simCompletedUI.SetActive(true);
                 break;
         }
+    }
 
+    private void HideObstacles()
+    {
+        // This code only runs in artistic mode.
+        if (currentTheme == Themes.Artistic)
+        {
+            // Show
+            if (obstaclesHidden)
+            {
+                foreach (Transform obstacle in obstacles.transform)
+                {
+                    Color newColour = obstacle.GetComponent<SpriteRenderer>().color;
+                    newColour.a = 1;
+                    obstacle.GetComponent<SpriteRenderer>().color = newColour;
+                }
+            }
+            // Hide
+            else
+            {
+                foreach (Transform obstacle in obstacles.transform)
+                {
+                    Color newColour = obstacle.GetComponent<SpriteRenderer>().color;
+                    newColour.a = 0;
+                    obstacle.GetComponent<SpriteRenderer>().color = newColour;
+                }
+            }
+
+            // Flip flop
+            obstaclesHidden = !obstaclesHidden;
+        }
     }
 
     // Update is called once per frame
@@ -161,6 +199,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space)) SwitchThemes();
         if (Input.GetKeyDown(KeyCode.LeftShift)) ToggleUI();
+        if (Input.GetKeyDown(KeyCode.RightShift)) HideObstacles();
 
         switch (currentState)
         {
