@@ -157,11 +157,20 @@ public class Agent2 : MonoBehaviour
     /// </summary>
     [SerializeField] private float maxAvoidanceForce;
 
-    #region Theme-Related Components
+    #region Themes
     public bool realistic;
     private SpriteRenderer spriteRenderer;
     public Color colourRealistic;
     public Color colourArtistic;
+    #endregion
+
+    #region Lifespan Data (in seconds)
+    [SerializeField] private float minLifespan;
+    [SerializeField] private float maxLifespan;
+    private float lifespan;
+    private float age;
+    public bool Alive { get; private set; }
+    public float RemainingSeconds { get; private set; }
     #endregion
 
     // Deprecated
@@ -173,6 +182,9 @@ public class Agent2 : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         sprite = GetComponent<SpriteRenderer>().sprite;
         length = GetComponent<Renderer>().bounds.size.y;
+        lifespan = Random.Range(minLifespan, maxLifespan);
+        age = 0;
+        Alive = true;
 
         // Spawn agents at random locations and velocities onscreen.
         sceneDimensions = Camera.main.ScreenToWorldPoint(
@@ -488,6 +500,18 @@ public class Agent2 : MonoBehaviour
         else
         {
             transform.rotation = Quaternion.identity;
+        }
+
+        // Update age and RemainingSeconds if the agent is still "alive".
+        if (age <= lifespan)
+        {
+            age += Time.deltaTime;
+            RemainingSeconds = lifespan - age;
+        }
+        else
+        {
+            Alive = false;
+            RemainingSeconds = 0;
         }
 
         //transform.Rotate(transform.forward, angle);

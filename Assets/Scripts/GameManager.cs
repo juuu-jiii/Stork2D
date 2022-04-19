@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject cursorTrackerGO;
 
-    #region Theme-Related Components
+    #region Themes
     [SerializeField] private SpriteRenderer backdrop;
     [SerializeField] private GameObject obstacles;
 
@@ -27,6 +28,12 @@ public class GameManager : MonoBehaviour
     /// Backing List so trails can be enabled/disabled correctly.
     /// </summary>
     private List<Agent2> agentsMaster;
+    #endregion
+
+    #region UI
+    [SerializeField] private GameObject ui;
+    [SerializeField] private TextMeshProUGUI simulationProgress;
+    private float maxWaitTime;
     #endregion
 
     private CursorTracker cursorTracker;
@@ -67,11 +74,6 @@ public class GameManager : MonoBehaviour
                     newColour.a = 0;
                     obstacle.GetComponent<SpriteRenderer>().color = newColour;
                 }
-                    //obstacle.GetComponent<SpriteRenderer>().color = new Color(
-                    //    obstacleColour.r,
-                    //    obstacleColour.g,
-                    //    obstacleColour.b,
-                    //    0);
 
                 foreach (Agent2 agent in agentsMaster)
                 { 
@@ -96,11 +98,6 @@ public class GameManager : MonoBehaviour
                     newColour.a = 1;
                     obstacle.GetComponent<SpriteRenderer>().color = newColour;
                 }
-                    //obstacle.GetComponent<SpriteRenderer>().color = new Color(
-                    //    obstacleColour.r,
-                    //    obstacleColour.g,
-                    //    obstacleColour.b,
-                    //    1);
 
                 foreach (Agent2 agent in agentsMaster)
                 {
@@ -118,56 +115,57 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void ToggleUI()
+    {
+        if (ui.activeInHierarchy) ui.SetActive(false);
+        else ui.SetActive(true);
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space)) SwitchThemes();
+        if (Input.GetKeyDown(KeyCode.LeftShift)) ToggleUI();
+
+        if (agents.Count == 0)
         {
-            SwitchThemes();
+            simulationProgress.text = string.Format(
+                "remaining: {0} of {1}\nmax wait time: {2}s",
+                agents.Count,
+                agentsMaster.Count,
+                0);
         }
-
-        // Screen wraparound code
-        //foreach (Agent2 agent in agents)
-        for (int i = agents.Count - 1; i >= 0; i--)
+        else
         {
-            // Destroy and remove and agents that have reached the goal.
-            if (agents[i].ReachedGoal)
+            maxWaitTime = float.MinValue;
+
+            for (int i = agents.Count - 1; i >= 0; i--)
             {
-                //Destroy(agents[i]);
-                agents[i].enabled = false;
-                agents.RemoveAt(i);
+                // Update remaining time. This must take place either before
+                // removal or in the else clause to avoid an
+                // IndexOutOfRangeException.
+                if (agents[i].RemainingSeconds > maxWaitTime)
+                    maxWaitTime = agents[i].RemainingSeconds;
+
+                // Deactivate and remove agents that have reached the goal or died.
+                if (agents[i].ReachedGoal || !agents[i].Alive)
+                {
+                    agents[i].enabled = false;
+                    agents.RemoveAt(i);
+                }
+                // Otherwise, update cursor position.
+                // Must be placed in an else block to prevent an
+                // IndexOutOfRangeException from being thrown in the event the 
+                // agent at the last index gets removed and the program tries to
+                // access its script.
+                else agents[i].CursorPosWorld = cursorTracker.TrackCursor();
             }
-            // Otherwise, update cursor position.
-            // Must be placed in an else block to prevent an
-            // IndexOutOfRangeException from being thrown in the event the 
-            // agent at the last index gets removed and the program tries to
-            // access its script.
-            else agents[i].CursorPosWorld = cursorTracker.TrackCursor();
 
-
-            //// Along x-axis
-            //if (agent.transform.position.x > Screen.width) 
-            //    agent.transform.position = new Vector3(
-            //        0, 
-            //        agent.transform.position.y, 
-            //        agent.transform.position.z);
-            //else if (agent.transform.position.x < 0)
-            //    agent.transform.position = new Vector3(
-            //        Screen.width,
-            //        agent.transform.position.y,
-            //        agent.transform.position.z);
-
-            //// Along y-axis
-            //if (agent.transform.position.y > Screen.height)
-            //    agent.transform.position = new Vector3(
-            //       agent.transform.position.x,
-            //       0,
-            //       agent.transform.position.z);
-            //else if (agent.transform.position.y < 0)
-            //    agent.transform.position = new Vector3(
-            //        agent.transform.position.x,
-            //        Screen.height,
-            //        agent.transform.position.z);
+            simulationProgress.text = string.Format(
+                "remaining: {0} of {1}\nmax wait time: {2}s",
+                agents.Count,
+                agentsMaster.Count,
+                (int)maxWaitTime);
         }
     }
 }

@@ -112,6 +112,8 @@ MonoBehaviour:
   realistic: 0
   colourRealistic: {r: 0, g: 0, b: 0, a: 1}
   colourArtistic: {r: 0.41176474, g: 1, b: 0.95294124, a: 1}
+  minLifespan: 40
+  maxLifespan: 65
   maxAngle: 90
 --- !u!96 &-3500011811122285949
 TrailRenderer:
