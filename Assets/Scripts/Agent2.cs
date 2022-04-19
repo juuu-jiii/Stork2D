@@ -159,7 +159,6 @@ public class Agent2 : MonoBehaviour
 
     #region Themes
     public bool realistic;
-    private SpriteRenderer spriteRenderer;
     public Color colourRealistic;
     public Color colourArtistic;
     #endregion
@@ -173,16 +172,18 @@ public class Agent2 : MonoBehaviour
     public float RemainingSeconds { get; private set; }
     #endregion
 
+    private TrailRenderer trailRenderer;
+
     // Deprecated
     [SerializeField] private float maxAngle;
 
     // Start is called before the first frame update
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
         sprite = GetComponent<SpriteRenderer>().sprite;
         length = GetComponent<Renderer>().bounds.size.y;
         lifespan = Random.Range(minLifespan, maxLifespan);
+        trailRenderer = GetComponent<TrailRenderer>();
         
         sceneDimensions = Camera.main.ScreenToWorldPoint(new Vector3(
             Screen.width, 
@@ -197,6 +198,12 @@ public class Agent2 : MonoBehaviour
         age = 0;
         Alive = true;
         ReachedGoal = false;
+        trailRenderer.Clear();
+
+        // Since agents begin at the origin, the following placement code will
+        // move them to their initial random locations. This movement is picked
+        // up by the TrailRenderer, and so it must be hidden.
+        trailRenderer.enabled = false;
 
         // Spawn agents at random locations and velocities onscreen.
         transform.position = new Vector3(
@@ -204,8 +211,9 @@ public class Agent2 : MonoBehaviour
             Random.Range(-sceneDimensions.y / 2, sceneDimensions.y / 2),
             0);
         velocity = new Vector3(Random.Range(1, 6), Random.Range(1, 6), 0);
-        // Idk
-        //transform.rotation = Quaternion.LookRotation(Velocity.normalized);
+
+        // Re-enable the TrailRenderer once initial placement is complete.
+        trailRenderer.enabled = true;
     }
 
     /// <summary>
