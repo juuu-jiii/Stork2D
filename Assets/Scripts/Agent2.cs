@@ -499,7 +499,7 @@ public class Agent2 : MonoBehaviour
 
         AvoidCollisions();
 
-        if (Input.GetMouseButton(1)) MoveToCursor();
+        if (Input.GetMouseButton(0)) MoveToCursor();
 
         // Apply calculated changes to this agent.
         transform.position = new Vector3(
