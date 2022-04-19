@@ -157,12 +157,20 @@ public class Agent2 : MonoBehaviour
     /// </summary>
     [SerializeField] private float maxAvoidanceForce;
 
+    #region Theme-Related Components
+    public bool realistic;
+    private SpriteRenderer spriteRenderer;
+    public Color colourRealistic;
+    public Color colourArtistic;
+    #endregion
+
     // Deprecated
     [SerializeField] private float maxAngle;
 
     // Start is called before the first frame update
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         sprite = GetComponent<SpriteRenderer>().sprite;
         length = GetComponent<Renderer>().bounds.size.y;
 
@@ -471,8 +479,16 @@ public class Agent2 : MonoBehaviour
 
         // 2D-specific implementation that rotates the sprite in the direction
         // of movement. 
-        float angle = Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, transform.forward);
+        if (!realistic)
+        {
+            float angle = Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, transform.forward);
+        }
+        // Preserve fly-like appearance if theme is set to Realistic.
+        else
+        {
+            transform.rotation = Quaternion.identity;
+        }
 
         //transform.Rotate(transform.forward, angle);
         //transform.rotation = Quaternion.LookRotation(velocity);

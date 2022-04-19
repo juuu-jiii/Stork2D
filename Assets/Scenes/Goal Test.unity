@@ -344,7 +344,7 @@ Transform:
   - {fileID: 2013662534}
   - {fileID: 125708651}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &158540357
 PrefabInstance:
@@ -1243,7 +1243,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &528913190 stripped
 Transform:
@@ -1602,7 +1602,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &919073177
 PrefabInstance:
@@ -2237,6 +2237,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursorTrackerGO: {fileID: 1436910061}
+  backdrop: {fileID: 909427028}
+  obstacles: {fileID: 2101318295}
+  colourRealistic: {r: 0, g: 0, b: 0, a: 1}
+  colourArtistic: {r: 0.39215687, g: 0.58431375, b: 0.92941177, a: 1}
+  obstacleColour: {r: 1, g: 0, b: 0, a: 1}
 --- !u!4 &1302881978
 Transform:
   m_ObjectHideFlags: 0
@@ -2476,7 +2481,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1480293130 stripped
 Transform:
@@ -3057,7 +3062,7 @@ Transform:
   - {fileID: 823523742}
   - {fileID: 5841621896889444611}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5841621896889444610
 PrefabInstance:

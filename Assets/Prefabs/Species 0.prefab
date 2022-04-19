@@ -109,6 +109,9 @@ MonoBehaviour:
   maxSpeed: 0.2
   maxSeeAhead: 2
   maxAvoidanceForce: 0.2
+  realistic: 0
+  colourRealistic: {r: 0, g: 0, b: 0, a: 1}
+  colourArtistic: {r: 0.9568628, g: 0.909804, b: 0.7568628, a: 1}
   maxAngle: 90
 --- !u!96 &3754593489182017815
 TrailRenderer:
