@@ -12,6 +12,12 @@ public class GameManager : MonoBehaviour
         Realistic
     }
 
+    private enum SimulationStates
+    {
+        InProgress,
+        Completed
+    }
+
     [SerializeField] private GameObject cursorTrackerGO;
 
     #region Themes
@@ -31,19 +37,22 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region UI
-    [SerializeField] private GameObject ui;
+    [SerializeField] private GameObject simInProgressUI;
+    [SerializeField] private GameObject simCompletedUI;
     [SerializeField] private TextMeshProUGUI simulationProgress;
     private float maxWaitTime;
     #endregion
 
     private CursorTracker cursorTracker;
     private Themes currentTheme;
+    private SimulationStates currentState;
 
     public static List<Agent2> agents;
 
     // Start is called before the first frame update
     void Start()
     {
+        currentState = SimulationStates.InProgress;
         currentTheme = Themes.Artistic;
         cursorTracker = cursorTrackerGO.GetComponent<CursorTracker>();
 
@@ -52,11 +61,16 @@ public class GameManager : MonoBehaviour
 
     private void Init()
     {
+        // Show/hide appropriate UI components.
+        simInProgressUI.SetActive(true);
+        simCompletedUI.SetActive(false);
+        
         // FindObjectsOfType() returns Object[]. Cast to Agent2[], then use
         // LINQ to convert to a List.
         agents = ((Agent2[])FindObjectsOfType(typeof(Agent2))).ToList();
         agentsMaster = ((Agent2[])FindObjectsOfType(typeof(Agent2))).ToList();
 
+        // Enable and initialise each agent.
         foreach (Agent2 agent in agents)
         {
             agent.enabled = true;
@@ -128,8 +142,18 @@ public class GameManager : MonoBehaviour
 
     private void ToggleUI()
     {
-        if (ui.activeInHierarchy) ui.SetActive(false);
-        else ui.SetActive(true);
+        switch (currentState)
+        {
+            case SimulationStates.InProgress:
+                if (simInProgressUI.activeInHierarchy) simInProgressUI.SetActive(false);
+                else simInProgressUI.SetActive(true);
+                break;
+            case SimulationStates.Completed:
+                if (simCompletedUI.activeInHierarchy) simCompletedUI.SetActive(false);
+                else simCompletedUI.SetActive(true);
+                break;
+        }
+
     }
 
     // Update is called once per frame
@@ -138,50 +162,66 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) SwitchThemes();
         if (Input.GetKeyDown(KeyCode.LeftShift)) ToggleUI();
 
-        if (agents.Count == 0)
+        switch (currentState)
         {
-            simulationProgress.text = string.Format(
-                "remaining: {0} of {1}\nmax wait time: {2}s",
-                agents.Count,
-                agentsMaster.Count,
-                0);
-
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                Init();
-            }
-        }
-        else
-        {
-            maxWaitTime = float.MinValue;
-
-            for (int i = agents.Count - 1; i >= 0; i--)
-            {
-                // Update remaining time. This must take place either before
-                // removal or in the else clause to avoid an
-                // IndexOutOfRangeException.
-                if (agents[i].RemainingSeconds > maxWaitTime)
-                    maxWaitTime = agents[i].RemainingSeconds;
-
-                // Deactivate and remove agents that have reached the goal or died.
-                if (agents[i].ReachedGoal || !agents[i].Alive)
+            case SimulationStates.InProgress:
+                if (agents.Count == 0)
                 {
-                    agents[i].enabled = false;
-                    agents.RemoveAt(i);
-                }
-                // Otherwise, update cursor position.
-                // Must be placed in an else block to prevent an
-                // IndexOutOfRangeException from being thrown in the event the 
-                // agent at the last index gets removed and the program tries to
-                // access its script.
-                else agents[i].CursorPosWorld = cursorTracker.TrackCursor();
-            }
+                    simulationProgress.text = string.Format(
+                        "remaining: {0} of {1}\nmax wait time: {2}s",
+                        agents.Count,
+                        agentsMaster.Count,
+                        0);
 
-            simulationProgress.text = string.Format(
-                "remaining: {0} of {1}\nmax wait time: {2}s",
-                agents.Count,
-                agentsMaster.Count,
-                (int)maxWaitTime);
+                    // Show/hide appropriate UI components.
+                    simInProgressUI.SetActive(false);
+                    simCompletedUI.SetActive(true);
+
+                    currentState = SimulationStates.Completed;
+                    //if (Input.GetKeyDown(KeyCode.Return)) Init();
+                }
+                else
+                {
+                    maxWaitTime = float.MinValue;
+
+                    for (int i = agents.Count - 1; i >= 0; i--)
+                    {
+                        // Update remaining time. This must take place either before
+                        // removal or in the else clause to avoid an
+                        // IndexOutOfRangeException.
+                        if (agents[i].RemainingSeconds > maxWaitTime)
+                            maxWaitTime = agents[i].RemainingSeconds;
+
+                        // Deactivate and remove agents that have reached the goal or died.
+                        if (agents[i].ReachedGoal || !agents[i].Alive)
+                        {
+                            agents[i].enabled = false;
+                            agents.RemoveAt(i);
+                        }
+                        // Otherwise, update cursor position.
+                        // Must be placed in an else block to prevent an
+                        // IndexOutOfRangeException from being thrown in the event the 
+                        // agent at the last index gets removed and the program tries to
+                        // access its script.
+                        else agents[i].CursorPosWorld = cursorTracker.TrackCursor();
+                    }
+
+                    simulationProgress.text = string.Format(
+                        "remaining: {0} of {1}\nmax wait time: {2}s",
+                        agents.Count,
+                        agentsMaster.Count,
+                        (int)maxWaitTime);
+                }
+
+                break;
+            case SimulationStates.Completed:
+                if (Input.GetKeyDown(KeyCode.Return))
+                {
+                    Init();
+                    currentState = SimulationStates.InProgress;
+                }
+                break;
         }
+
     }
 }
