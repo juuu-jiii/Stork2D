@@ -186,6 +186,7 @@ public class Agent2 : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.enabled = false; // Hide agent.
         sprite = spriteRenderer.sprite;
         length = GetComponent<Renderer>().bounds.size.y;
         //lifespan = Random.Range(minLifespan, maxLifespan);
@@ -493,64 +494,67 @@ public class Agent2 : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        // Reset counter variables at the start of each update loop iteration.
-        neighbourCount = 0;
-        totalPosition = Vector3.zero;
-        totalVelocity = Vector3.zero;
-        totalAvoidance = Vector3.zero;
-
-        CheckNeighbours();
-
-        // Cohesion and alignment rules depend on the presence of neighbours.
-        if (neighbourCount > 0)
+        if (Alive)
         {
-            CalculateCohesion();
-            CalculateAlignment();
-        }
+            // Reset counter variables at the start of each update loop iteration.
+            neighbourCount = 0;
+            totalPosition = Vector3.zero;
+            totalVelocity = Vector3.zero;
+            totalAvoidance = Vector3.zero;
+
+            CheckNeighbours();
+
+            // Cohesion and alignment rules depend on the presence of neighbours.
+            if (neighbourCount > 0)
+            {
+                CalculateCohesion();
+                CalculateAlignment();
+            }
         
-        // Separation does not necessarily depend on the presence of neighbours;
-        // visual range != minimum distance.
-        CalculateSeparation();
+            // Separation does not necessarily depend on the presence of neighbours;
+            // visual range != minimum distance.
+            CalculateSeparation();
         
-        // Housekeeping
-        LimitSpeed();
-        //LimitRotation();
-        RetainOnScreen();
+            // Housekeeping
+            LimitSpeed();
+            //LimitRotation();
+            RetainOnScreen();
 
-        AvoidCollisions();
+            AvoidCollisions();
 
-        if (Input.GetMouseButton(0) && Alive) MoveToCursor();
+            if (Input.GetMouseButton(0) && Alive) MoveToCursor();
 
-        // Apply calculated changes to this agent.
-        transform.position = new Vector3(
-            transform.position.x + velocity.x,
-            transform.position.y + velocity.y,
-            transform.position.z);
+            // Apply calculated changes to this agent.
+            transform.position = new Vector3(
+                transform.position.x + velocity.x,
+                transform.position.y + velocity.y,
+                transform.position.z);
 
-        // 2D-specific implementation that rotates the sprite in the direction
-        // of movement. 
-        if (!realistic)
-        {
-            float angle = Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.AngleAxis(angle, transform.forward);
-        }
-        // Preserve fly-like appearance if theme is set to Realistic.
-        else
-        {
-            transform.rotation = Quaternion.identity;
-        }
+            // 2D-specific implementation that rotates the sprite in the direction
+            // of movement. 
+            if (!realistic)
+            {
+                float angle = Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.AngleAxis(angle, transform.forward);
+            }
+            // Preserve fly-like appearance if theme is set to Realistic.
+            else
+            {
+                transform.rotation = Quaternion.identity;
+            }
 
-        // Update age and RemainingSeconds if the agent is still "alive".
-        if (age <= lifespan)
-        {
-            age += Time.deltaTime;
-            RemainingSeconds = lifespan - age;
-        }
-        else
-        {
-            Alive = false;
-            spriteRenderer.enabled = false; // Hide agent.
-            RemainingSeconds = 0;
+            // Update age and RemainingSeconds if the agent is still "alive".
+            if (age <= lifespan)
+            {
+                age += Time.deltaTime;
+                RemainingSeconds = lifespan - age;
+            }
+            else
+            {
+                Alive = false;
+                spriteRenderer.enabled = false; // Hide agent.
+                RemainingSeconds = 0;
+            }
         }
 
         //transform.Rotate(transform.forward, angle);
