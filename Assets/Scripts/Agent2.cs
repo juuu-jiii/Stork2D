@@ -169,8 +169,8 @@ public class Agent2 : MonoBehaviour
     #endregion
 
     #region Lifespan Data (in seconds)
-    [SerializeField] private float minLifespan;
-    [SerializeField] private float maxLifespan;
+    //[SerializeField] private float minLifespan;
+    //[SerializeField] private float maxLifespan;
     private float lifespan;
     private float age;
     public bool Alive { get; private set; }
@@ -188,7 +188,7 @@ public class Agent2 : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         sprite = spriteRenderer.sprite;
         length = GetComponent<Renderer>().bounds.size.y;
-        lifespan = Random.Range(minLifespan, maxLifespan);
+        //lifespan = Random.Range(minLifespan, maxLifespan);
         trailRenderer = GetComponent<TrailRenderer>();
         
         // Subtract margin * 2 to produce padding on both x- and y-extremes.
@@ -196,8 +196,6 @@ public class Agent2 : MonoBehaviour
             Screen.width - margin * 2, 
             Screen.height - margin * 2, 
             13));
-
-        Init();
     }
 
     public void SetData(CustomisableData customisableData)
@@ -243,6 +241,7 @@ public class Agent2 : MonoBehaviour
     private void CheckNeighbours()
     {
         //float signedAngle;
+        if (GameManager.agents == null) return;
 
         foreach (Agent2 a in GameManager.agents)
         {

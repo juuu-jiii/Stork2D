@@ -106,8 +106,6 @@ public class GameManager : MonoBehaviour
         maxSpeed.onValueChanged.AddListener(delegate { SetCustomisableData(); });
         maxSeeAhead.onValueChanged.AddListener(delegate { SetCustomisableData(); });
         lifespan.onValueChanged.AddListener(delegate { SetCustomisableData(); });
-
-        Init();
     }
 
     private void SetCustomisableData()
@@ -135,7 +133,7 @@ public class GameManager : MonoBehaviour
         agents = ((Agent2[])FindObjectsOfType(typeof(Agent2))).ToList();
         agentsMaster = ((Agent2[])FindObjectsOfType(typeof(Agent2))).ToList();
 
-        //SetCustomisableData();
+        SetCustomisableData();
 
         // Enable and initialise each agent.
         foreach (Agent2 agent in agents)
