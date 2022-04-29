@@ -185,9 +185,10 @@ public class Agent2 : MonoBehaviour
         lifespan = Random.Range(minLifespan, maxLifespan);
         trailRenderer = GetComponent<TrailRenderer>();
         
+        // Subtract margin * 2 to produce padding on both x- and y-extremes.
         sceneDimensions = Camera.main.ScreenToWorldPoint(new Vector3(
-            Screen.width, 
-            Screen.height, 
+            Screen.width - margin * 2, 
+            Screen.height - margin * 2, 
             13));
 
         Init();
@@ -220,8 +221,8 @@ public class Agent2 : MonoBehaviour
 
         // Spawn agents at random locations and velocities onscreen.
         transform.position = new Vector3(
-            Random.Range(-sceneDimensions.x / 2, sceneDimensions.x / 2),
-            Random.Range(-sceneDimensions.y / 2, sceneDimensions.y / 2),
+            Random.Range(-sceneDimensions.x, sceneDimensions.x),
+            Random.Range(-sceneDimensions.y, sceneDimensions.y),
             0);
         velocity = new Vector3(Random.Range(1, 6), Random.Range(1, 6), 0);
 
