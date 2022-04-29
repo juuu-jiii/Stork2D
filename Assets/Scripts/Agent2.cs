@@ -193,6 +193,19 @@ public class Agent2 : MonoBehaviour
         Init();
     }
 
+    public void SetData(CustomisableData customisableData)
+    {
+        visualRange = customisableData.VisualRange;
+        minDistance = customisableData.MinDistance;
+        cohesionForce = customisableData.Cohesion;
+        alignmentForce = customisableData.Alignment;
+        separationForce = customisableData.Separation;
+        maxAvoidanceForce = customisableData.Avoidance;
+        maxSpeed = customisableData.MaxSpeed;
+        maxSeeAhead = customisableData.MaxSeeAhead;
+        lifespan = customisableData.Lifespan;
+    }
+
     public void Init()
     {
         age = 0;
