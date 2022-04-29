@@ -371,7 +371,7 @@ public class GameManager : MonoBehaviour
                     CurrentState = SimulationStates.Completed;
                 }
 
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButtonDown(1))
                 {
                     foreach (Obstacle obstacle in obstacles)
                     {
@@ -388,11 +388,11 @@ public class GameManager : MonoBehaviour
                     if (!obstacle.InUse && obstacle.gameObject.activeInHierarchy)
                     {
                         obstacle.gameObject.SetActive(false);
-                        Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                        obstacle.transform.position = new Vector3(
-                            worldPos.x,
-                            worldPos.y,
-                            0);
+                        //Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                        //obstacle.transform.position = new Vector3(
+                        //    worldPos.x,
+                        //    worldPos.y,
+                        //    0);
                     }
 
                 break;
