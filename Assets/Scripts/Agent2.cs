@@ -39,6 +39,11 @@ public class Agent2 : MonoBehaviour
     public Vector3 CursorPosWorld { get; set; }
 
     /// <summary>
+    /// Renders the sprite to the screen. Used to toggle visibility of agents.
+    /// </summary>
+    private SpriteRenderer spriteRenderer;
+
+    /// <summary>
     /// Sprite used to represent this agent onscreen.
     /// </summary>
     private Sprite sprite;
@@ -180,7 +185,8 @@ public class Agent2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sprite = GetComponent<SpriteRenderer>().sprite;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        sprite = spriteRenderer.sprite;
         length = GetComponent<Renderer>().bounds.size.y;
         lifespan = Random.Range(minLifespan, maxLifespan);
         trailRenderer = GetComponent<TrailRenderer>();
@@ -211,6 +217,7 @@ public class Agent2 : MonoBehaviour
     {
         age = 0;
         Alive = true;
+        spriteRenderer.enabled = true; // Show agent.
         ReachedGoal = false;
         trailRenderer.Clear();
 
@@ -543,6 +550,7 @@ public class Agent2 : MonoBehaviour
         else
         {
             Alive = false;
+            spriteRenderer.enabled = false; // Hide agent.
             RemainingSeconds = 0;
         }
 
