@@ -422,6 +422,9 @@ public class GameManager : MonoBehaviour
                     simCompletedUI.SetActive(false);
                     obstaclePlacementUI.SetActive(true);
 
+                    foreach (Agent2 agent in agentsMaster)
+                        agent.Trail.Clear();
+
                     CurrentState = SimulationStates.ObstaclePlacement;
                 }
                 else if (Input.GetKeyDown(KeyCode.Return))
