@@ -104,14 +104,14 @@ MonoBehaviour:
   cohesionForce: 0.005
   alignmentForce: 0.05
   separationForce: 0.3
-  screenRetentionForce: 0.1
+  screenRetentionForce: 0.2
   margin: 50
   maxSpeed: 0.2
   maxSeeAhead: 2
   maxAvoidanceForce: 0.2
-  realistic: 0
-  colourRealistic: {r: 0, g: 0, b: 0, a: 1}
-  colourArtistic: {r: 0.9568628, g: 0.909804, b: 0.7568628, a: 1}
+  plain: 0
+  colourPlain: {r: 0, g: 0, b: 0, a: 1}
+  colourArtistic: {r: 1, g: 1, b: 1, a: 1}
   maxAngle: 90
 --- !u!96 &3754593489182017815
 TrailRenderer:

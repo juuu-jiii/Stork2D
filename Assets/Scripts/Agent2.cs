@@ -163,8 +163,8 @@ public class Agent2 : MonoBehaviour
     [SerializeField] private float maxAvoidanceForce;
 
     #region Themes
-    public bool realistic;
-    public Color colourRealistic;
+    public bool plain;
+    public Color colourPlain;
     public Color colourArtistic;
     #endregion
 
@@ -177,7 +177,7 @@ public class Agent2 : MonoBehaviour
     public float RemainingSeconds { get; private set; }
     #endregion
 
-    private TrailRenderer trailRenderer;
+    public TrailRenderer Trail { get; private set; }
 
     // Deprecated
     [SerializeField] private float maxAngle;
@@ -190,8 +190,8 @@ public class Agent2 : MonoBehaviour
         sprite = spriteRenderer.sprite;
         length = GetComponent<Renderer>().bounds.size.y;
         //lifespan = Random.Range(minLifespan, maxLifespan);
-        trailRenderer = GetComponent<TrailRenderer>();
-        
+        Trail = GetComponent<TrailRenderer>();
+        Trail.colorGradient = new Gradient();
         // Subtract margin * 2 to produce padding on both x- and y-extremes.
         sceneDimensions = Camera.main.ScreenToWorldPoint(new Vector3(
             Screen.width - margin * 2, 
@@ -212,18 +212,19 @@ public class Agent2 : MonoBehaviour
         lifespan = customisableData.Lifespan;
     }
 
-    public void Init()
+    public void Init(Gradient trailGradient)
     {
         age = 0;
         Alive = true;
         spriteRenderer.enabled = true; // Show agent.
         ReachedGoal = false;
-        trailRenderer.Clear();
+        Trail.Clear();
+        Trail.colorGradient = trailGradient;
 
         // Since agents begin at the origin, the following placement code will
         // move them to their initial random locations. This movement is picked
         // up by the TrailRenderer, and so it must be hidden.
-        trailRenderer.enabled = false;
+        Trail.enabled = false;
 
         // Spawn agents at random locations and velocities onscreen.
         transform.position = new Vector3(
@@ -233,7 +234,7 @@ public class Agent2 : MonoBehaviour
         velocity = new Vector3(Random.Range(1, 6), Random.Range(1, 6), 0);
 
         // Re-enable the TrailRenderer once initial placement is complete.
-        trailRenderer.enabled = true;
+        Trail.enabled = true;
     }
 
     /// <summary>
@@ -532,16 +533,16 @@ public class Agent2 : MonoBehaviour
 
             // 2D-specific implementation that rotates the sprite in the direction
             // of movement. 
-            if (!realistic)
-            {
+            //if (!plain)
+            //{
                 float angle = Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.AngleAxis(angle, transform.forward);
-            }
-            // Preserve fly-like appearance if theme is set to Realistic.
-            else
-            {
-                transform.rotation = Quaternion.identity;
-            }
+            //}
+            //// Preserve fly-like appearance if theme is set to Realistic.
+            //else
+            //{
+            //    transform.rotation = Quaternion.identity;
+            //}
 
             // Update age and RemainingSeconds if the agent is still "alive".
             if (age <= lifespan)

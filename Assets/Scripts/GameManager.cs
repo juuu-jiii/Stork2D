@@ -69,7 +69,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI lifespanValueLabel;
     #endregion
 
-    CustomisableData customisableData;
+    [SerializeField] private GameObject trailColour;
+    private TrailCustomisation trailCustomisation;
+    private CustomisableData customisableData;
+    private Gradient gradient;
+    private GradientAlphaKey[] alphaKeys;
 
     private bool obstaclesHidden;
     private CursorTracker cursorTracker;
@@ -84,6 +88,8 @@ public class GameManager : MonoBehaviour
         CurrentState = SimulationStates.Completed;
         currentTheme = Themes.Artistic;
         cursorTracker = cursorTrackerGO.GetComponent<CursorTracker>();
+        trailCustomisation = trailColour.GetComponent<TrailCustomisation>();
+        alphaKeys = new GradientAlphaKey[3];
 
         obstacles = new List<Obstacle>();
         GameObject temp;
@@ -106,6 +112,40 @@ public class GameManager : MonoBehaviour
         maxSpeed.onValueChanged.AddListener(delegate { SetCustomisableData(); });
         maxSeeAhead.onValueChanged.AddListener(delegate { SetCustomisableData(); });
         lifespan.onValueChanged.AddListener(delegate { SetCustomisableData(); });
+
+        //// Populate the colour keys at the relative time 0 and 1 (0 and 100%).
+        //colourKeys[0].color = segments[0].image.color;
+        //colourKeys[0].time = 0.0f;
+        //colourKeys[1].color = segments[1].image.color;
+        //colourKeys[1].time = 0.5f;
+        //colourKeys[2].color = segments[2].image.color;
+        //colourKeys[2].time = 1.0f;
+
+        
+
+        //TrailGradient.SetKeys(colourKeys, alphaKeys);
+    }
+
+    private void SetAlphaZero()
+    {
+        // Populate the alpha keys at relative time 0 and 1 (0 and 100%).
+        alphaKeys[0].alpha = 0;
+        alphaKeys[0].time = 0.0f;
+        alphaKeys[1].alpha = 0;
+        alphaKeys[1].time = 0.5f;
+        alphaKeys[2].alpha = 0;
+        alphaKeys[2].time = 1.0f;
+    }
+
+    private void SetAlphaOne()
+    {
+        // Populate the alpha keys at relative time 0 and 1 (0 and 100%).
+        alphaKeys[0].alpha = 1;
+        alphaKeys[0].time = 0.0f;
+        alphaKeys[1].alpha = 1;
+        alphaKeys[1].time = 0.5f;
+        alphaKeys[2].alpha = 1;
+        alphaKeys[2].time = 1.0f;
     }
 
     private void SetCustomisableData()
@@ -122,7 +162,7 @@ public class GameManager : MonoBehaviour
             lifespan.value);
     }
 
-    private void Init()
+    private void Init(Gradient trailGradient)
     {
         //// Show/hide appropriate UI components.
         //simInProgressUI.SetActive(true);
@@ -135,17 +175,50 @@ public class GameManager : MonoBehaviour
 
         SetCustomisableData();
 
-        // Enable and initialise each agent.
-        foreach (Agent2 agent in agents)
+        switch (currentTheme)
         {
-            agent.enabled = true;
-            agent.Init();
-            agent.SetData(customisableData);
+            case Themes.Artistic:
+                // Enable and initialise each agent as usual.
+                foreach (Agent2 agent in agents)
+                {
+                    agent.enabled = true;
+                    agent.Init(trailGradient);
+                    agent.SetData(customisableData);
+                }
+
+                break;
+            case Themes.Plain:
+                // Enable and initialise each agent, but hide trails.
+                foreach (Agent2 agent in agents)
+                {
+                    //trailCustomisation.TrailGradient.alphaKeys[0].alpha = 0;
+                    //trailCustomisation.TrailGradient.alphaKeys[1].alpha = 0;
+                    //trailCustomisation.TrailGradient.alphaKeys[2].alpha = 0;
+                    SetAlphaZero();
+                    trailCustomisation.TrailGradient.SetKeys(
+                        trailCustomisation.TrailGradient.colorKeys,
+                        alphaKeys);
+
+                    agent.enabled = true;
+                    agent.Init(trailGradient);
+                    agent.SetData(customisableData);
+
+                    // Update colour as necessary.
+                    agent.GetComponent<SpriteRenderer>().color = agent.colourPlain;
+                    //Color newColour = agent.GetComponent<TrailRenderer>().startColor;
+                    //newColour.a = 0;
+                    //agent.GetComponent<TrailRenderer>().startColor = newColour;
+                    //agent.GetComponent<TrailRenderer>().colorGradient
+                    //agent.GetComponent<TrailRenderer>().endColor = newColour;
+                    //agent.GetComponent<TrailRenderer>().enabled = false;
+                }
+
+                break;
         }
     }
 
     /// <summary>
-    /// Switch between "artistic" and "realistic" themes.
+    /// Switch between "artistic" and "plain" themes.
     /// </summary>
     private void SwitchThemes()
     {
@@ -156,27 +229,38 @@ public class GameManager : MonoBehaviour
                 currentTheme = Themes.Plain;
                 backdrop.color = colourArtistic;
 
-                // Use this to foreach through a parent GameObject's children.
-                // If using a for-loop, using transform.childCount and 
-                // transform.GetChild().
-                foreach (Obstacle obstacle in obstacles)
+                //// Use this to foreach through a parent GameObject's children.
+                //// If using a for-loop, using transform.childCount and 
+                //// transform.GetChild().
+                //foreach (Obstacle obstacle in obstacles)
+                //{
+                //    Color newColour = obstacle.GetComponent<SpriteRenderer>().color;
+                //    newColour.a = 0;
+                //    obstacle.GetComponent<SpriteRenderer>().color = newColour;
+                //    //obstacle.GetComponent<SpriteRenderer>().color = backdrop.color;
+                //}
+
+                if (agentsMaster != null)
                 {
-                    Color newColour = obstacle.GetComponent<SpriteRenderer>().color;
-                    newColour.a = 0;
-                    obstacle.GetComponent<SpriteRenderer>().color = newColour;
-                    //obstacle.GetComponent<SpriteRenderer>().color = backdrop.color;
-                }
+                    foreach (Agent2 agent in agentsMaster)
+                    {
+                        //agent.GetComponent<TrailRenderer>().enabled = false;
+                        //Color newColour = agent.GetComponent<TrailRenderer>().startColor;
+                        //newColour.a = 0;
+                        //agent.GetComponent<TrailRenderer>().startColor = newColour;
+                        //agent.GetComponent<TrailRenderer>().endColor = newColour;
+                        //trailCustomisation.TrailGradient.alphaKeys[0].alpha = 0;
+                        //trailCustomisation.TrailGradient.alphaKeys[1].alpha = 0;
+                        //trailCustomisation.TrailGradient.alphaKeys[2].alpha = 0;
+                        SetAlphaZero();
+                        trailCustomisation.TrailGradient.SetKeys(
+                            trailCustomisation.TrailGradient.colorKeys,
+                            alphaKeys);
+                        agent.Trail.colorGradient = trailCustomisation.TrailGradient;
 
-                foreach (Agent2 agent in agentsMaster)
-                { 
-                    //agent.GetComponent<TrailRenderer>().enabled = false;
-                    Color newColour = agent.GetComponent<TrailRenderer>().startColor;
-                    newColour.a = 0;
-                    agent.GetComponent<TrailRenderer>().startColor = newColour;
-                    agent.GetComponent<TrailRenderer>().endColor = newColour;
-
-                    agent.realistic = true;
-                    agent.GetComponent<SpriteRenderer>().color = agent.colourRealistic;
+                        agent.plain = true;
+                        agent.GetComponent<SpriteRenderer>().color = agent.colourPlain;
+                    }
                 }
 
                 break;
@@ -184,28 +268,40 @@ public class GameManager : MonoBehaviour
                 currentTheme = Themes.Artistic;
                 backdrop.color = colourRealistic;
 
-                // Only show obstacles if they were not hidden before.
-                if (!obstaclesHidden)
+                //// Only show obstacles if they were not hidden before.
+                //if (!obstaclesHidden)
+                //{
+                //    foreach (Obstacle obstacle in obstacles)
+                //    {
+                //        Color newColour = obstacle.GetComponent<SpriteRenderer>().color;
+                //        newColour.a = 1;
+                //        obstacle.GetComponent<SpriteRenderer>().color = newColour;
+                //        //obstacle.GetComponent<SpriteRenderer>().color = obstacleColour;
+                //    }
+                //}
+
+                if (agentsMaster != null)
                 {
-                    foreach (Obstacle obstacle in obstacles)
+                    foreach (Agent2 agent in agentsMaster)
                     {
-                        Color newColour = obstacle.GetComponent<SpriteRenderer>().color;
-                        newColour.a = 1;
-                        obstacle.GetComponent<SpriteRenderer>().color = newColour;
-                        //obstacle.GetComponent<SpriteRenderer>().color = obstacleColour;
+                        //agent.GetComponent<TrailRenderer>().enabled = true;
+                        //Color newColour = agent.GetComponent<TrailRenderer>().startColor;
+                        //newColour.a = 1;
+                        //agent.GetComponent<TrailRenderer>().startColor = newColour;
+                        //agent.GetComponent<TrailRenderer>().endColor = newColour;
+
+                        //trailCustomisation.TrailGradient.alphaKeys[0].alpha = 1;
+                        //trailCustomisation.TrailGradient.alphaKeys[1].alpha = 1;
+                        //trailCustomisation.TrailGradient.alphaKeys[2].alpha = 1;
+                        SetAlphaOne();
+                        trailCustomisation.TrailGradient.SetKeys(
+                            trailCustomisation.TrailGradient.colorKeys,
+                            alphaKeys);
+                        agent.Trail.colorGradient = trailCustomisation.TrailGradient;
+
+                        agent.plain = false;
+                        agent.GetComponent<SpriteRenderer>().color = agent.colourArtistic;
                     }
-                }
-
-                foreach (Agent2 agent in agentsMaster)
-                {
-                    //agent.GetComponent<TrailRenderer>().enabled = true;
-                    Color newColour = agent.GetComponent<TrailRenderer>().startColor;
-                    newColour.a = 1;
-                    agent.GetComponent<TrailRenderer>().startColor = newColour;
-                    agent.GetComponent<TrailRenderer>().endColor = newColour;
-
-                    agent.realistic = false;
-                    agent.GetComponent<SpriteRenderer>().color = agent.colourArtistic;
                 }
 
                 break;
@@ -273,11 +369,7 @@ public class GameManager : MonoBehaviour
             case SimulationStates.InProgress:
                 if (agents.Count == 0)
                 {
-                    simulationProgress.text = string.Format(
-                        "remaining: {0} of {1}\nmax wait time: {2}s",
-                        agents.Count,
-                        agentsMaster.Count,
-                        0);
+                    simulationProgress.text = "remaining: 0s";
 
                     // Show/hide appropriate UI components.
                     simInProgressUI.SetActive(false);
@@ -316,9 +408,7 @@ public class GameManager : MonoBehaviour
                     }
 
                     simulationProgress.text = string.Format(
-                        "remaining: {0} of {1}\nmax wait time: {2}s",
-                        agents.Count,
-                        agentsMaster.Count,
+                        "remaining: {0}s", 
                         (int)maxWaitTime);
                 }
 
@@ -341,7 +431,7 @@ public class GameManager : MonoBehaviour
                     simCompletedUI.SetActive(false);
                     obstaclePlacementUI.SetActive(false);
 
-                    Init();
+                    Init(trailCustomisation.TrailGradient);
                     CurrentState = SimulationStates.InProgress;
                 }
 
