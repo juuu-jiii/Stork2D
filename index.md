@@ -64,69 +64,71 @@ also not used.
 In the second, user testing was carried out with no restrictions, and the 
 results were recorded.
 
+#### Experiment Part 1
 <figure>
   <img src="c0_a1_s1_l5.png">
   <figcaption>
     Cohesion = 0, alignment = 1, separation = 1, and lifespan = 5s
   </figcaption>
-</figure>  
+</figure><br><br>
 
 <figure>
   <img src="c0_a1_s1_l10.png">
   <figcaption>
     Cohesion = 0, alignment = 1, separation = 1, and lifespan = 10s
   </figcaption>
-</figure>  
+</figure><br><br>
 
 <figure>
   <img src="c0_a1_s1_l20.png">
   <figcaption>
     Cohesion = 0, alignment = 1, separation = 1, and lifespan = 20s
   </figcaption>
-</figure>  
+</figure><br><br>
 
 <figure>
   <img src="c1_a0_s1_l5.png">
   <figcaption>
     Cohesion = 1, alignment = 0, separation = 1, and lifespan = 5s
   </figcaption>
-</figure>  
+</figure><br><br>
 
 <figure>
   <img src="c1_a0_s1_l10.png">
   <figcaption>
     Cohesion = 1, alignment = 0, separation = 1, and lifespan = 10s
   </figcaption>
-</figure>  
+</figure><br><br>
 
 <figure>
   <img src="c1_a0_s1_l20.png">
   <figcaption>
     Cohesion = 1, alignment = 0, separation = 1, and lifespan = 20s
   </figcaption>
-</figure>  
+</figure><br><br>
 
 <figure>
   <img src="c1_a1_s0_l5.png">
   <figcaption>
     Cohesion = 1, alignment = 1, separation = 0, and lifespan = 5s
   </figcaption>
-</figure>  
+</figure><br><br>
 
 <figure>
   <img src="c1_a1_s0_l10.png">
   <figcaption>
     Cohesion = 1, alignment = 1, separation = 0, and lifespan = 10s
   </figcaption>
-</figure>  
+</figure><br><br>
 
 <figure>
   <img src="c1_a1_s0_l20.png">
   <figcaption>
     Cohesion = 1, alignment = 1, separation = 0, and lifespan = 20s
   </figcaption>
-</figure>  
+</figure><br><br>
 
+#### Experiment Part 2
 <figure>
   <img src="ut1.png">
   <figcaption>
@@ -137,7 +139,19 @@ results were recorded.
   <figcaption>
     User test 1. Note the placement of the three obstacles.
   </figcaption>
+</figure><br><br>
+
+<figure>
+  <img src="ut2.png">
+  <figcaption>
+  </figcaption>
 </figure>  
+<figure>
+  <img src="ut2_sliders.png">
+  <figcaption>
+    User test 2, using the same three obstacles as in user test 1.
+  </figcaption>
+</figure><br><br>
  
 <figure>
   <img src="ut3.png">
@@ -146,7 +160,7 @@ results were recorded.
     the upper-right corner and dragged, in an arc, down to the 
     lower-right corner.
   </figcaption>
-</figure>  
+</figure><br><br>
 
 <figure>
   <img src="ut4.png">
@@ -155,4 +169,19 @@ results were recorded.
     held in the centre of the screen for the entire duration of the 
     simulation run.
   </figcaption>
-</figure>  
+</figure><br><br>
+
+The results from part 1 of the experiment show that the system does,
+in fact, convey various types of flock movements based on supplied 
+parameters, despite some physical inaccuracies due to the fact that
+agents within the system do not leverage Unity's physics library and 
+rigid body system. The results from part 2 demonstrated that, 
+regardless of the fact some features were given more attention by 
+users than others, the interactivity and customisability enhances the 
+overall appreciation of emergent observable group behaviours produced 
+by the flocking algorithm.  
+
+More information can be found within the **[paper](final-paper.pdf)**.  
+Source code for this project is available on **[GitHub](https://github.com/juuu-jiii/Stork2D/tree/webpage-creation)**.
+
+
