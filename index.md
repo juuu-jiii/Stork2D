@@ -8,13 +8,17 @@ members themselves. This is a top-down, graphical approach to visualising
 the complex emergent interactions that Reynolds's simple bottom-up solution 
 generates. Several modifications and additions are made to the original 
 framework, with the intent of emphasising, and heightening appreciation of, 
-resultant observable group behaviours.
+resultant observable group behaviours.  
+
+The system is live and accessible **[here](build.html)**.
+
 ### Flocking
 The flocking agents on-screen adhere to a set of eight rules. Three of these
 are the original rules from Reynolds's boids simulation (i.e., cohesion, 
 alignment, and separation). The rest are additional rules that do not serve
 to overrule the original three, but rather work together to rpoduce modified
-inetractions between agents and their environment.
+inetractions between agents and their environment.  
+
 ### Summary of Flocking Rules
 #### The (Original) Three Rules
 1. Cohesion: prevents agents from breaking off from the flock, by
@@ -23,7 +27,8 @@ steering each agent towards the average position of its neighbours.
 by adjusting each agent's velocity such that it matches the average velocity 
 of its neighbours.
 3. Separation: states that agents should stay some minimum distance apart to 
-avoid collisions, despite the previous two rules bringing them together.
+avoid collisions, despite the previous two rules bringing them together.  
+
 #### Additional Rules
 1. Lifespan: determines how long an agent is alive for, and therefore the 
 duration of the current simulation run altogether.
@@ -33,7 +38,8 @@ location of the cursor while the user holds down the left mouse button.
 4. Obstacle Avoidance: prevents agents from flying through obstacles placed
 by the user within the environment.
 5. Speed Limitation: prevents agents from travelling at arbitrarily fast
-speeds.
+speeds.  
+
 ### Interactivity
 Aside from user-defined obstacle placement and making agents flock to the 
 user's cursor while the left mouse button is held down, several interactive
