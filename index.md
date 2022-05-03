@@ -182,6 +182,6 @@ overall appreciation of emergent observable group behaviours produced
 by the flocking algorithm.  
 
 More information can be found within the **[paper](final-paper.pdf)**.  
-Source code for this project is available on **[GitHub](https://github.com/juuu-jiii/Stork2D/tree/webpage-creation)**.
+Source code for this project is available on **[GitHub](https://github.com/juuu-jiii/Stork2D)**.
 
 
