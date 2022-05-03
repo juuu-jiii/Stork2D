@@ -1,4 +1,4 @@
-# Interactive
+# Interactive and Variable Visualisations of Aggregate Motion
 ## Depicting Movements of Simulated Flocks
 According to Aristotle, the whole is greater than the sum of its parts. 
 Craig Reynold's 1986 boids simulation was developed based on the assumption 
