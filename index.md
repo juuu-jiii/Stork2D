@@ -10,7 +10,9 @@ generates. Several modifications and additions are made to the original
 framework, with the intent of emphasising, and heightening appreciation of, 
 resultant observable group behaviours.  
 
-The system is live and accessible **[here](build.html)**.
+### Build Link and Details
+Built completely using Unity with C# scripting and deployed using WebGL.  
+The system is live and accessible **[here](build.html)**.  
 
 ### Flocking
 The flocking agents on-screen adhere to a set of eight rules. Three of these
@@ -48,3 +50,109 @@ and customisable elements are featured:
 - the colour of agent trails can be customised;
 - the theme/colour palette of the simulation can be switched; and
 - the visibility of placed obstacles can be toggled on/off 
+
+### Results
+Screenshots of selected output runs are included here, alongside slider 
+values used, where appropriate.  
+The experiment was broken up into two parts. In the first, data for each run
+consisted of keeping two of the three “original” rules at 100%, with the 
+third being set to 0%, to highlight the significance of each rule in its 
+absence. This was carried out for lifespans of 5s, 10s, and 20s. This was 
+necessary because of the sheer number of possible value combinations. The 
+remaining slider values were kept constant at the 50% mark. Obstacles were 
+also not used.  
+In the second, user testing was carried out with no restrictions, and the 
+results were recorded.
+
+<figure>
+  <img src="c0_a1_s1_l5.png">
+  <figcaption>
+    Cohesion = 0, alignment = 1, separation = 1, and lifespan = 5s
+  </figcaption>
+</figure>  
+
+<figure>
+  <img src="c0_a1_s1_l10.png">
+  <figcaption>
+    Cohesion = 0, alignment = 1, separation = 1, and lifespan = 10s
+  </figcaption>
+</figure>  
+
+<figure>
+  <img src="c0_a1_s1_l20.png">
+  <figcaption>
+    Cohesion = 0, alignment = 1, separation = 1, and lifespan = 20s
+  </figcaption>
+</figure>  
+
+<figure>
+  <img src="c1_a0_s1_l5.png">
+  <figcaption>
+    Cohesion = 1, alignment = 0, separation = 1, and lifespan = 5s
+  </figcaption>
+</figure>  
+
+<figure>
+  <img src="c1_a0_s1_l10.png">
+  <figcaption>
+    Cohesion = 1, alignment = 0, separation = 1, and lifespan = 10s
+  </figcaption>
+</figure>  
+
+<figure>
+  <img src="c1_a0_s1_l20.png">
+  <figcaption>
+    Cohesion = 1, alignment = 0, separation = 1, and lifespan = 20s
+  </figcaption>
+</figure>  
+
+<figure>
+  <img src="c1_a1_s0_l5.png">
+  <figcaption>
+    Cohesion = 1, alignment = 1, separation = 0, and lifespan = 5s
+  </figcaption>
+</figure>  
+
+<figure>
+  <img src="c1_a1_s0_l10.png">
+  <figcaption>
+    Cohesion = 1, alignment = 1, separation = 0, and lifespan = 10s
+  </figcaption>
+</figure>  
+
+<figure>
+  <img src="c1_a1_s0_l20.png">
+  <figcaption>
+    Cohesion = 1, alignment = 1, separation = 0, and lifespan = 20s
+  </figcaption>
+</figure>  
+
+<figure>
+  <img src="ut1.png">
+  <figcaption>
+  </figcaption>
+</figure>  
+<figure>
+  <img src="ut1_sliders.png">
+  <figcaption>
+    User test 1. Note the placement of the three obstacles.
+  </figcaption>
+</figure>  
+ 
+<figure>
+  <img src="ut3.png">
+  <figcaption>
+    User test 3. 5s lifespan. The left mouse button was clicked on 
+    the upper-right corner and dragged, in an arc, down to the 
+    lower-right corner.
+  </figcaption>
+</figure>  
+
+<figure>
+  <img src="ut4.png">
+  <figcaption>
+    User test 4. 5s lifespan. The left mouse button was clicked and 
+    held in the centre of the screen for the entire duration of the 
+    simulation run.
+  </figcaption>
+</figure>  
