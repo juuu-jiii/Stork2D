@@ -18,8 +18,8 @@ The system is live and accessible **[here](build.html)**.
 The flocking agents on-screen adhere to a set of eight rules. Three of these
 are the original rules from Reynolds's boids simulation (i.e., cohesion, 
 alignment, and separation). The rest are additional rules that do not serve
-to overrule the original three, but rather work together to rpoduce modified
-inetractions between agents and their environment.  
+to overrule the original three, but rather work together to produce modified
+interactions between agents and their environment.  
 
 ### Summary of Flocking Rules
 #### The (Original) Three Rules
